@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barkuspedia</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1,
+        h2 {
+            font-weight: normal;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1em;
+            margin: 2em 0 1em 0;
+        }
+
+        p {
+            margin: 0.5em 0;
+        }
+
+        .item {
+            margin: 0.5em 0;
+        }
+
+        .arrow {
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+
+        .note {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .x-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="x-link">
+        <a href="https://x.com/b_arkus" target="_blank">@b_arkus</a>
+    </div>
+
+    <div id="dynamic-emoji" style="font-size:2em; text-align:center; margin-bottom:1em;"></div>
+
+    <h1>ben arkus, but you can call me Barkus</h1>
+    <p>former philosopher - now vibe coder</p>
+
+    <h2>things i've written</h2>
+
+    <div class="item">
+        📌 <a href="essays-index.html">philosophical essays<span class="arrow">→</span></a>
+    </div>
+
+    <h2>projects</h2>
+
+    <div class="item">
+        <a href="projects.html">see all projects<span class="arrow">→</span></a>
+    </div>
+
+    <h2>contact</h2>
+
+    <div class="item">
+        email: benarkus@outlook.com
+        <a href="mailto:benarkus@outlook.com"><span class="arrow">→</span></a>
+    </div>
+
+    <script>
+        const emojis = ["☯️", "✨", "🌱", "🧠", "💡", "🔥", "🌙", "🌊", "🦉", "🎵", "🧘‍♂️"];
+        let idx = 0;
+        const emojiDiv = document.getElementById('dynamic-emoji');
+        function rotateEmoji() {
+            emojiDiv.textContent = emojis[idx];
+            idx = (idx + 1) % emojis.length;
+        }
+        rotateEmoji();
+        setInterval(rotateEmoji, 1200);
+    </script>
+</body>
+
+</html>
